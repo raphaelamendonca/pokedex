@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "stylelint-config-standard"
+  ],
+  "ignoreFiles": [
+    "**/__tests__/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts",
+        "**/*.tsx"
+      ],
+      "customSyntax": "postcss-styled-syntax",
+      "rules": {
+        "no-empty-first-line": null,
+        "value-no-vendor-prefix": true,
+        "property-no-vendor-prefix": true,
+        "no-empty-source": null,
+        "no-extra-semicolons": null,
+        "no-missing-end-of-source-newline": null
+      }
+    }
+  ],
+  "rules": {
+    "declaration-no-important": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ]
+  }
+}

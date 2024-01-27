@@ -1,0 +1,159 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:jest/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "rules": {
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
+      "max-classes-per-file": "error",
+      "prefer-regex-literals": "warn",
+      "array-bracket-newline": [
+        "error",
+        {
+          "multiline": true
+        }
+      ],
+      "curly": "warn",
+      "no-else-return": "error",
+      "no-alert": "error",
+      "no-console": "error",
+      "no-multi-spaces": "error",
+      "no-multiple-empty-lines": "error",
+      "no-nested-ternary": "error",
+      "no-trailing-spaces": "error",
+      "no-useless-rename": "error",
+      "no-var": "error",
+      "prefer-const": [
+        "error",
+        {
+          "destructuring": "all"
+        }
+      ],
+      "@typescript-eslint/quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "@typescript-eslint/semi": [
+        "error",
+        "never"
+      ],
+      "@typescript-eslint/comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-use-before-define": "error",
+      "@typescript-eslint/no-useless-constructor": "error",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "default",
+          "format": [
+            "camelCase",
+            "PascalCase"
+          ]
+        },
+        {
+          "selector": "variableLike",
+          "format": [
+            "camelCase",
+            "PascalCase"
+          ]
+        },
+        {
+          "selector": "enumMember",
+          "format": [
+            "PascalCase"
+          ]
+        },
+        {
+          "selector": "typeLike",
+          "format": [
+            "PascalCase"
+          ]
+        }
+      ],
+      "@typescript-eslint/space-before-function-paren": [
+        "error",
+        {
+          "named": "never"
+        }
+      ],
+      "@typescript-eslint/no-extra-parens": "error",
+      "@typescript-eslint/no-duplicate-imports": "error",
+      "@typescript-eslint/indent": [
+        "error",
+        2,
+        {
+          "SwitchCase": 1,
+          "ignoredNodes": [
+            "FunctionExpression > .params[decorators.length > 0]",
+            "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
+            "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
+          ]
+        }
+      ],
+      "@typescript-eslint/no-shadow": "error"
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.d.ts",
+          "jest.config.ts",
+          "webpack.config.ts"
+        ],
+        "rules": {
+          "@typescript-eslint/naming-convention": "off"
+        }
+      },
+      {
+        "files": [
+          "src/**/__tests__/*.{ts,tsx}"
+        ],
+        "rules": {
+          "@typescript-eslint/no-unused-vars": "warn"
+        }
+      },
+      {
+        "files": [
+          "*.tsx"
+        ],
+        "rules": {
+          "@typescript-eslint/no-extra-parens": "off"
+        }
+      }
+    ],
+    "plugins": [
+      "react",
+      "jest",
+      "@typescript-eslint"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "ignorePatterns": [
+      "coverage/**/*",
+      "dist/**/*",
+      "node_modules/**/*",
+      "packages/host/**/*"
+    ]
+  }
